@@ -50,7 +50,6 @@ dogApp.dogDropDown = (dataFromApi) => {
 dogApp.displayInfo = () => {
     dogApp.form.addEventListener("change", (e) => {
         e.preventDefault();
-        // console.log("Something has been selected");
         // second API call 
         dogApp.individualDog = () => {
             const url = new URL(dogApp.apiUrl);
@@ -61,22 +60,25 @@ dogApp.displayInfo = () => {
             fetch(url)
                 .then((res) => res.json())
                 .then((data) => {
-                    // console.log(data.name);
                     let selection = document.querySelector('select').value;
-                    console.log(selection);
-                    
                     
                     for (let i = 0; i < data.length; i++) {
                         if(i == selection) {
                             console.log(data[i]);
                             console.log(data[i].name);
                             console.log(data[i].breed_group);
+                            const dogImageParent = document.querySelector("div.dogImg");
+                            dogImageParent.innerHTML = "";
+                            const dogImage = document.createElement("img");
+                            dogImage.src = data[i].image.url;
+                            dogImageParent.appendChild(dogImage);
                         }
                     }
                 });
         }
 
         dogApp.individualDog();
+
     })
 }
 
