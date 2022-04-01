@@ -34,18 +34,56 @@ dogApp.dogData = () => {
 
 // this method is created to populate the dropdown with the dog breed names (it is called iin the dogApp.dogData function)
 dogApp.dogDropDown = (dataFromApi) => {
+    console.log(dataFromApi);
     dataFromApi.forEach((breedName) => {
         const dropDown = document.getElementById('breed')
 
         const option = document.createElement('option')
-        option.value = breedName.name
+        option.value = dataFromApi.indexOf(breedName);
         option.label = breedName.name
         dropDown.appendChild(option)
     })
 }
 
+
+// method to change dynamic content based on user selection
+dogApp.displayInfo = () => {
+    dogApp.form.addEventListener("change", (e) => {
+        e.preventDefault();
+        // console.log("Something has been selected");
+        // second API call 
+        dogApp.individualDog = () => {
+            const url = new URL(dogApp.apiUrl);
+            url.search = new URLSearchParams({
+                api_key: dogApp.apiKey
+            })
+        
+            fetch(url)
+                .then((res) => res.json())
+                .then((data) => {
+                    // console.log(data.name);
+                    let selection = document.querySelector('select').value;
+                    console.log(selection);
+                    
+                    
+                    for (let i = 0; i < data.length; i++) {
+                        if(i == selection) {
+                            console.log(data[i]);
+                            console.log(data[i].name);
+                            console.log(data[i].breed_group);
+                        }
+                    }
+                });
+        }
+
+        dogApp.individualDog();
+    })
+}
+
 dogApp.init = () => {
-    dogApp.dogData()
+    dogApp.form = document.querySelector("form");
+    dogApp.dogData();
+    dogApp.displayInfo();
 }
 
 dogApp.init();
