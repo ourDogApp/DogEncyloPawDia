@@ -64,14 +64,32 @@ dogApp.displayInfo = () => {
                     
                     for (let i = 0; i < data.length; i++) {
                         if(i == selection) {
-                            console.log(data[i]);
-                            console.log(data[i].name);
-                            console.log(data[i].breed_group);
+                            // console.log(data[i]);
+                            // console.log(data[i].name);
+                            // console.log(data[i].breed_group);
                             const dogImageParent = document.querySelector("div.dogImg");
                             dogImageParent.innerHTML = "";
                             const dogImage = document.createElement("img");
                             dogImage.src = data[i].image.url;
                             dogImageParent.appendChild(dogImage);
+
+                            const dogInfoParent = document.querySelector("div.dogInfo");
+                            dogInfoParent.innerHTML = "";
+                            const dogName = document.createElement("p");
+                            dogName.textContent = `${data[i].name}`;
+                            dogInfoParent.appendChild(dogName);
+
+                            const dogBreedGroup = document.createElement("p");
+                            dogBreedGroup.textContent = `Breed group: ${data[i].breed_group}`;
+                            dogInfoParent.appendChild(dogBreedGroup);
+
+                            const dogLifespan = document.createElement("p");
+                            dogLifespan.textContent = `Lifespan: ${data[i].life_span}`;
+                            dogInfoParent.appendChild(dogLifespan);
+
+                            const dogTemperament = document.createElement("p");
+                            dogTemperament.textContent = `Temperament: ${data[i].temperament}`;
+                            dogInfoParent.appendChild(dogTemperament);
                         }
                     }
                 });
