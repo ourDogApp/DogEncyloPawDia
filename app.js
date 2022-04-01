@@ -14,8 +14,38 @@
 // Add a button onto the page with a click event listener
 // When clicked, dynamically display a random selection of dog breed info & image to the page
 
-const url = new URL("https://api.thedogapi.com/v1/breeds");
+const dogApp = {};
 
-fetch(url)
-    .then((res) => res.json())
-    .then((data) => console.log(data));
+dogApp.apiUrl = "https://api.thedogapi.com/v1/breeds"
+dogApp.apiKey = "02a97c50-0a41-42dd-8e00-3f527db558a7"
+
+dogApp.dogData = () => {
+    const url = new URL(dogApp.apiUrl);
+    url.search = new URLSearchParams({
+        api_key: dogApp.apiKey
+    })
+
+    fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+            dogApp.dogDropDown(data)
+        });
+}
+
+// this method is created to populate the dropdown with the dog breed names (it is called iin the dogApp.dogData function)
+dogApp.dogDropDown = (dataFromApi) => {
+    dataFromApi.forEach((breedName) => {
+        const dropDown = document.getElementById('breed')
+
+        const option = document.createElement('option')
+        option.value = breedName.name
+        option.label = breedName.name
+        dropDown.appendChild(option)
+    })
+}
+
+dogApp.init = () => {
+    dogApp.dogData()
+}
+
+dogApp.init();
