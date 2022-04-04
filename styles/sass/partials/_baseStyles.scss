@@ -1,5 +1,6 @@
 html {
     font-family: 'Rubik', sans-serif;
+    font-size: 125%;
 }
 
 .wrapper{
@@ -8,62 +9,64 @@ html {
     margin: 0 auto;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 // header styles
 header {
     text-align: center;
 }
 
-i {
-    visibility: hidden;
+h1 {
+    font-size: 1rem;
 }
 
 select {
-    // background-color: orange;
     border: none;
     padding: 10px;
     background-color: black;
     color: white;
     max-width: 90%;
     text-align: center;
-}
-
-// dog image styles
-.dogImg img {
-    max-height: 50vh;
-    box-shadow: 10px 10px;
-}
-
-// .dogInfo,
-// .dogImg {
-//     border: 2px solid red;
-// }
-
-.dogInfo {
-    padding-right: 25px;
-    text-align: center;
+    font-size: 0.8rem;
 }
 
 main {
     align-items: center;
     display: flex;
-    margin-top: 40px;
+    margin: 40px 0 50px;
     flex-direction: column;
+    justify-content: space-around;
+}
+
+// dog image styles
+.dogImg {
+    max-height: 50vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    max-height: 60vh;
+    display: block;
+    box-shadow: 10px 10px;
+}
+
+.dogInfo {
+    // padding-right: 25px;
+    text-align: center;
+    font-size: 1rem;
 }
 // dog image style END
 
 // footer start
 footer {
-    position:fixed;
-    left:0px;
-    bottom:0px;
-    width:100%;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
     text-align: center;
     background-color: black;
     color: white;
+    p {
+        margin: 5px 0;
+        font-size: 0.8rem;
+    }
 }

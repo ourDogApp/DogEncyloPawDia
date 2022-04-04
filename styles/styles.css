@@ -228,6 +228,7 @@ html {
 
 html {
   font-family: "Rubik", sans-serif;
+  font-size: 125%;
 }
 
 .wrapper {
@@ -236,18 +237,12 @@ html {
   margin: 0 auto;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
 header {
   text-align: center;
 }
 
-i {
-  visibility: hidden;
+h1 {
+  font-size: 1rem;
 }
 
 select {
@@ -257,17 +252,7 @@ select {
   color: white;
   max-width: 90%;
   text-align: center;
-}
-
-.dogImg img {
-  max-height: 50vh;
-  -webkit-box-shadow: 10px 10px;
-          box-shadow: 10px 10px;
-}
-
-.dogInfo {
-  padding-right: 25px;
-  text-align: center;
+  font-size: 0.8rem;
 }
 
 main {
@@ -277,11 +262,31 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 40px;
+  margin: 40px 0 50px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.dogImg {
+  max-height: 50vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  max-height: 60vh;
+  display: block;
+  -webkit-box-shadow: 10px 10px;
+          box-shadow: 10px 10px;
+}
+
+.dogInfo {
+  text-align: center;
+  font-size: 1rem;
 }
 
 footer {
@@ -292,4 +297,40 @@ footer {
   text-align: center;
   background-color: black;
   color: white;
+}
+footer p {
+  margin: 5px 0;
+  font-size: 0.8rem;
+}
+
+@media (min-width: 500px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 650px) {
+  main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .dogInfo {
+    text-align: left;
+    width: 45%;
+  }
+
+  .dogImg {
+    width: 45%;
+  }
+}
+@media (min-width: 800px) {
+  .wrapper {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
 }
