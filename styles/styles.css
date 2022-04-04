@@ -226,6 +226,10 @@ html {
   overflow: hidden;
 }
 
+html {
+  font-family: "Rubik", sans-serif;
+}
+
 .wrapper {
   max-width: 1260px;
   width: 90%;
@@ -236,4 +240,56 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+header {
+  text-align: center;
+}
+
+i {
+  visibility: hidden;
+}
+
+select {
+  border: none;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  max-width: 90%;
+  text-align: center;
+}
+
+.dogImg img {
+  max-height: 50vh;
+  -webkit-box-shadow: 10px 10px;
+          box-shadow: 10px 10px;
+}
+
+.dogInfo {
+  padding-right: 25px;
+  text-align: center;
+}
+
+main {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  color: white;
 }

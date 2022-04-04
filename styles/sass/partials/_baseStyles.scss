@@ -1,3 +1,7 @@
+html {
+    font-family: 'Rubik', sans-serif;
+}
+
 .wrapper{
     max-width: 1260px;
     width: 90%;
@@ -8,4 +12,58 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+// header styles
+header {
+    text-align: center;
+}
+
+i {
+    visibility: hidden;
+}
+
+select {
+    // background-color: orange;
+    border: none;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    max-width: 90%;
+    text-align: center;
+}
+
+// dog image styles
+.dogImg img {
+    max-height: 50vh;
+    box-shadow: 10px 10px;
+}
+
+// .dogInfo,
+// .dogImg {
+//     border: 2px solid red;
+// }
+
+.dogInfo {
+    padding-right: 25px;
+    text-align: center;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+}
+// dog image style END
+
+// footer start
+footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    text-align: center;
+    background-color: black;
+    color: white;
 }

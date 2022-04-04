@@ -81,8 +81,13 @@ dogApp.displayInfo = () => {
                             dogInfoParent.appendChild(dogName);
 
                             const dogBreedGroup = document.createElement("p");
-                            dogBreedGroup.textContent = `Breed group: ${data[i].breed_group}`;
-                            dogInfoParent.appendChild(dogBreedGroup);
+                            // added if statement for dogs that did not have dog breed data - it will not appear on the screen
+                            // E.g. Appenzeller Sennenhund -> American Bully
+                            if(data[i].breed_group) {
+                                dogBreedGroup.textContent = `Breed group: ${data[i].breed_group}`;
+                                dogInfoParent.appendChild(dogBreedGroup)
+                            }
+
 
                             const dogLifespan = document.createElement("p");
                             dogLifespan.textContent = `Lifespan: ${data[i].life_span}`;
