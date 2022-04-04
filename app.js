@@ -71,6 +71,7 @@ dogApp.displayInfo = () => {
                             dogImageParent.innerHTML = "";
                             const dogImage = document.createElement("img");
                             dogImage.src = data[i].image.url;
+                            dogImage.alt = `A picture of ${data[i].name}`
                             dogImageParent.appendChild(dogImage);
 
                             const dogInfoParent = document.querySelector("div.dogInfo");
