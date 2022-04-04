@@ -282,6 +282,7 @@ img {
   display: block;
   -webkit-box-shadow: 10px 10px;
           box-shadow: 10px 10px;
+  margin: 0 0 0 auto;
 }
 
 .dogInfo {
@@ -326,11 +327,12 @@ footer p {
   }
 }
 @media (min-width: 800px) {
-  .wrapper {
-    width: 80%;
-  }
-
   h1 {
     font-size: 1.9rem;
+  }
+
+  main {
+    width: 70%;
+    margin: 40px auto;
   }
 }

@@ -20,11 +20,16 @@
 }
 
 @media (min-width: 800px) {
-    .wrapper {
-        width: 80%;
-    }
+    // .wrapper {
+    //     width: 80%;
+    // }
 
     h1 {
         font-size: 1.9rem;
+    }
+
+    main {
+        width: 70%;
+        margin: 40px auto;
     }
 }
