@@ -226,14 +226,113 @@ html {
   overflow: hidden;
 }
 
+html {
+  font-family: "Rubik", sans-serif;
+  font-size: 125%;
+}
+
 .wrapper {
   max-width: 1260px;
   width: 90%;
   margin: 0 auto;
 }
 
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+select {
+  border: none;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  max-width: 90%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+main {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 40px 0 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.dogImg {
+  max-height: 50vh;
+}
+
 img {
   max-width: 100%;
   height: auto;
+  max-height: 60vh;
   display: block;
+  -webkit-box-shadow: 10px 10px;
+          box-shadow: 10px 10px;
+  margin: 0 0 0 auto;
+}
+
+.dogInfo {
+  text-align: center;
+  font-size: 1rem;
+}
+
+footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+footer p {
+  margin: 5px 0;
+  font-size: 0.8rem;
+}
+
+@media (min-width: 500px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 650px) {
+  main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .dogInfo {
+    text-align: left;
+    width: 45%;
+  }
+
+  .dogImg {
+    width: 45%;
+  }
+}
+@media (min-width: 800px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  main {
+    width: 70%;
+    margin: 40px auto;
+  }
 }
