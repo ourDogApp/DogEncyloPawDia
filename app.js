@@ -88,14 +88,16 @@ dogApp.displayInfo = () => {
                                 dogInfoParent.appendChild(dogBreedGroup)
                             }
 
-
                             const dogLifespan = document.createElement("p");
                             dogLifespan.textContent = `Lifespan: ${data[i].life_span}`;
                             dogInfoParent.appendChild(dogLifespan);
 
                             const dogTemperament = document.createElement("p");
-                            dogTemperament.textContent = `Temperament: ${data[i].temperament}`;
-                            dogInfoParent.appendChild(dogTemperament);
+                            // noticed poodle dog breed was missing temperament property - added if statement logic
+                            if(data[i].temperament) {
+                                dogTemperament.textContent = `Temperament: ${data[i].temperament}`;
+                                dogInfoParent.appendChild(dogTemperament);
+                            }
                         }
                     }
                 });
