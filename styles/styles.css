@@ -285,7 +285,7 @@ button {
 }
 
 button:hover,
-button:focus {
+button:focus-visible {
   background-color: white;
   color: black;
 }
